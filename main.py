@@ -18,7 +18,7 @@ st.set_page_config(page_title = 'Car Price Prediction',
 words_dict = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "eight": 8, "twelve": 12}
 
 
-@st.cache()
+@st.cache_data()
 def load_data():
     cars_df = pd.read_csv("car-prices.csv")
     car_companies = pd.Series([car.split(" ")[0] for car in cars_df['CarName']], index = cars_df.index)
